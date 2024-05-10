@@ -5,10 +5,16 @@ import member from "../model/member.model.js";
 //get member 
 export const getMember =async (req,res)=>
     {
+        console.log(req.user)
         try{
+            if (req.user.role !== "admin")
+                {
+                    return res.status(401).json({msg:"not allowed"});
+                }
+
             const Member= await member.find();
             res.status(200).json(Member);
-
+            
         }catch(error)
         {
             console.log("error:",error);

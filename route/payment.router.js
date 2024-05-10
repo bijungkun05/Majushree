@@ -16,7 +16,7 @@ router.post("/createPayment", createPayment);
 router.get("/getPaymentby/:id", getPaymentById);
 
 
-router.put("/updatePayment/;id", updatePayment);
+router.put("/updatePayment/:id", updatePayment);
 
 router.delete("/deletePaymentBy/:id", deletePayment);
 

@@ -1,6 +1,6 @@
-import crypt from "crypt";
 
-const secretKey =crypt.randomBytes(32).toString("hex");
+
+const secretKey = "jkhdfjasdhf987dfa984r32fas2";
 
 
 export default secretKey;

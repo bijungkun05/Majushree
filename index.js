@@ -11,6 +11,9 @@ import paymentRoute from './route/payment.router.js';
 import loginRouter from './route/login.router.js';
 
 import  {AdminAccount}  from './scripts/setup.js';
+import  authorize  from './middleware/auth.middleware.js';
+
+
 
 
 
@@ -39,13 +42,14 @@ app.post ("/admin/",AdminAccount);
 
 
 //defining route
-app.use("/api/", memberRoute);
 
-app.use("/apii/",classesRoute);
+app.use("/api/",authorize, memberRoute);
 
-app.use("/aapi/", paymentRoute);
+app.use("/api/",authorize,classesRoute);
 
-app.use("/user/", signupRouter);
+app.use("/api/",authorize, paymentRoute);
+
+app.use("/api/user/", signupRouter);
 app.use ("/auth/", loginRouter);
 
 

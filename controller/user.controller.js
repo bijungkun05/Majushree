@@ -49,6 +49,7 @@ export const Signup =async (req,res)=>
                           return res.status(400).json({msg:"invalid password"});
                         }
                      const token = generateToken(user);
+                     console.log(token);
                     res.status(200).json({msg :"User login sucessfully" ,user:user, token:token});
                     }
 

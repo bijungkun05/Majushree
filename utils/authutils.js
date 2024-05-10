@@ -10,7 +10,7 @@ export function generateToken(user)
         email: user.email,
         role: user.role
     };
-    jsonwebtoken.sign(payload,secretKey,{expiresIn:"1h"});
+   return jsonwebtoken.sign(payload,secretKey,{expiresIn:"1h"});
 }
 
 export function generateRefreshToken(user)
@@ -21,10 +21,10 @@ export function generateRefreshToken(user)
         email: user.email,
         role: user.role
     };
-    JsonWebToken.sign(payload,secretKey,{expiresIn:"7h"});
+   return jsonwebtoken.sign(payload,secretKey,{expiresIn:"7h"});
 }
 
 export function verifyToken(token)
 {
-    jsonwebtoken.verify(token, secretKey);
+   return jsonwebtoken.verify(token, secretKey);
 }

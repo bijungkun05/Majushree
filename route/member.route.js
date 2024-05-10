@@ -13,7 +13,7 @@ router.post("/createmember", createMember);
 router.get("/getmemberby/:id", getMemberById);
 
 
-router.put("/updatemember/;id", updateMember);
+router.put("/updatemember/:id", updateMember);
 
 router.delete("/deleteMember/:id", deleteMember);
 
