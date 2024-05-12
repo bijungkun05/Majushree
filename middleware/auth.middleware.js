@@ -7,10 +7,11 @@ import secretKey from "../configuration/jwtConfig.js";
 export default async function  (req, res, next)  {
   const token =
     req.body.token || req.query.token || req.headers["x-access-token"];
-  if (!token) {
-    return res.status(403).send("A token is required for authentication");
+    console.log({token});
 
-  }    console.log({token});
+  if (!token) {
+    return res.status(401).send("A token is required for authentication");
+  }    
   try {
     const decoded = jsonwebtoken.verify(
       token,

@@ -49,7 +49,7 @@ app.use("/api/",authorize,classesRoute);
 
 app.use("/api/",authorize, paymentRoute);
 
-app.use("/api/user/", signupRouter);
+app.use("/auth/user/", signupRouter);
 app.use ("/auth/", loginRouter);
 
 
